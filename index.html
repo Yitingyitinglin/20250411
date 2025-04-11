@@ -1,95 +1,89 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>復古電玩風網頁</title>
+  <meta charset="UTF-8" />
+  <title>今日塔羅運勢</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Press Start 2P', cursive;
-      background: black url('https://www.transparenttextures.com/patterns/dark-mosaic.png') repeat;
-      color: #00FF00;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #1e0a3c, #3e2061);
+      color: #f5e6ff;
       text-align: center;
-    }
-
-    header {
-      background-color: #222;
-      padding: 20px;
-      border-bottom: 5px solid #FF00FF;
+      padding: 50px;
     }
 
     h1 {
-      font-size: 24px;
-      color: #FFD700;
-      text-shadow: 2px 2px #FF00FF;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      color: #ffd700;
+      text-shadow: 0 0 10px #fff;
     }
 
-    nav {
-      margin: 20px 0;
-    }
-
-    nav a {
-      color: #00FFFF;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      color: #FF00FF;
-    }
-
-    .content {
-      padding: 30px;
-    }
-
-    .btn {
+    .card {
+      font-size: 1.8em;
+      margin-top: 30px;
+      padding: 40px;
+      border: 3px solid #ffd700;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
       display: inline-block;
-      background-color: #FF00FF;
-      color: black;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid #00FFFF;
-      box-shadow: 0 0 10px #FF00FF;
-      transition: transform 0.2s;
+      min-width: 300px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      transform: perspective(1000px);
+      transition: transform 1s ease;
     }
 
-    .btn:hover {
-      transform: scale(1.1);
-      background-color: #FFD700;
-      box-shadow: 0 0 15px #FFD700;
+    .card.flip {
+      transform: rotateY(180deg);
     }
 
-    footer {
-      background-color: #222;
-      color: #888;
-      padding: 15px;
-      border-top: 5px solid #FF00FF;
-      font-size: 12px;
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      margin-top: 20px;
+      background: #7a00cc;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #cc99ff;
+    }
+
+    button:hover {
+      background: #9e4dff;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>⚡電玩懷舊世界⚡</h1>
-    <nav>
-      <a href="#">首頁</a>
-      <a href="#">遊戲庫</a>
-      <a href="#">討論區</a>
-      <a href="#">關於我們</a>
-    </nav>
-  </header>
+  <h1>🔮 抽一張今日塔羅運勢卡 🔮</h1>
+  <button onclick="drawCard()">開始占卜</button>
+  <div class="card" id="cardArea">請點選按鈕抽牌...</div>
 
-  <div class="content">
-    <p>歡迎來到復古電玩世界！按下按鈕開始你的冒險。</p>
-    <a href="#" class="btn">開始遊戲</a>
-  </div>
+  <script>
+    const cards = [
+      "🌞 太陽：今天光芒四射，適合表現自己！",
+      "🌙 月亮：注意內心的直覺，可能會有靈感閃現。",
+      "🗡 審判：今天是釐清過去與做決定的好時機。",
+      "👑 皇后：充滿創造力與愛的能量。",
+      "⚖ 正義：凡事冷靜評估，公正對待。",
+      "💀 死神：結束與重生，是新開始的徵兆。",
+      "🌀 命運之輪：命運正轉動，把握機會！"
+    ];
 
-  <footer>
-    &copy; 2025 電玩懷舊世界 | Powered by 8-bit Magic
-  </footer>
+    function drawCard() {
+      const cardArea = document.getElementById("cardArea");
+      
+      // 加入翻牌動畫
+      cardArea.classList.add("flip");
+
+      // 等待動畫結束後顯示結果
+      setTimeout(() => {
+        const card = cards[Math.floor(Math.random() * cards.length)];
+        cardArea.textContent = card;
+        cardArea.classList.remove("flip");
+      }, 1000); // 等待 1 秒鐘動畫完成
+    }
+  </script>
 </body>
 </html>
