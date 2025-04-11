@@ -17,4 +17,79 @@
 
     header {
       background-color: #222;
-      padding: 20
+      padding: 20px;
+      border-bottom: 5px solid #FF00FF;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #FFD700;
+      text-shadow: 2px 2px #FF00FF;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: #00FFFF;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #FF00FF;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #FF00FF;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #00FFFF;
+      box-shadow: 0 0 10px #FF00FF;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background-color: #FFD700;
+      box-shadow: 0 0 15px #FFD700;
+    }
+
+    footer {
+      background-color: #222;
+      color: #888;
+      padding: 15px;
+      border-top: 5px solid #FF00FF;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡電玩懷舊世界⚡</h1>
+    <nav>
+      <a href="#">首頁</a>
+      <a href="#">遊戲庫</a>
+      <a href="#">討論區</a>
+      <a href="#">關於我們</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <p>歡迎來到復古電玩世界！按下按鈕開始你的冒險。</p>
+    <a href="#" class="btn">開始遊戲</a>
+  </div>
+
+  <footer>
+    &copy; 2025 電玩懷舊世界 | Powered by 8-bit Magic
+  </footer>
+</body>
+</html>
